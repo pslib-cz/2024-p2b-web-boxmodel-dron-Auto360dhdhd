@@ -1,0 +1,158 @@
+@layer reset, init, design;
+
+@import url(normalize.css) layer(reset);
+@import url(https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap) layer(init);
+
+@layer init {
+    :root {
+        --primary: #66d4d4;
+        --text: #000000;
+        --black: #000000;
+        --light: #FFFFFF;
+        --gray: #3B3E40;
+    }
+    html {
+        font-family: "Open Sans", sans-serif;
+        color: var(--black);
+        font-weight: 400;
+    }
+    .page__logo::before {
+        content: "";
+        display: block;
+        background: center / contain no-repeat transparent;
+        /*
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        */
+        background-image: url("../images/logo.svg");
+        width: auto;
+        height: 1em;
+        font-size: 1.5em;
+    }
+    .page__logo > span {
+        display: none;
+    }
+}
+
+/* VRSTVA PRO VAŠE STYLY */
+@layer design {
+   
+    .img__responsive {
+        display: block;
+        max-width: 100%;
+    }
+    .page__content {
+        max-width: 40em;
+        margin: 0 auto;
+    }
+    .page__intro {
+        max-width: 45em;
+    }
+    .page__header {
+        padding-left: calc(1em + 5%);
+        padding-bottom: calc(1em + 5%);
+        padding-top: calc(1em + 5%);
+        background-image: url("../images/header-2560w.jpg");
+        background-size: cover;
+        background-position: top center;
+        color: var(--light);
+    }
+    .page__logo {
+        display: block;
+        width: 4em;
+        margin: 0 auto;
+    }
+    .button {
+        display: inline-block;
+        padding: 1em 2em;
+        text-decoration: none;
+        border-radius: .5em;
+        font-weight: 700;
+
+    }
+    .button--primary {
+        background: var(--primary);
+        color: var(--light);
+    
+    }
+    .button--primary:hover {
+        background: var(--black);
+        color: var(--light);
+    }
+    .button--secondary {
+        background: var(--light);
+        color: var(--black);
+    }
+    .button--secondary:hover {
+        background: var(--gray);
+        color: var(--light);
+    }
+    .picture-box {
+        margin: 1em 0;
+    }
+    .picture-box__caption {
+        font-size: .8em;
+        margin-top: 1em;
+        text-align: center;
+    }
+    .h3 {
+        font-size: 1.17em;
+        font-weight: bold;
+        margin-block-start: 1em;
+        margin-block-end: 1em;
+        margin-inline-start: 0px;
+        margin-inline-end: 0px;
+    }
+    .highlight-box {
+        padding: 1.75em;
+        border: var(--primary) 2px solid;
+    }
+    .list > li {
+        margin: 0.5em 0;
+    }
+    .list > li::marker {
+        color: var(--primary);
+    }
+    .page__section {
+        padding: 1em;
+    }
+    .panel {
+        max-width: 17em;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .gallery__item {
+        --margin: 1em;
+        display: inline-block;
+        width: calc(100% - 2*var(--margin));
+        margin : var(--margin);
+    }
+    .gallery__item--50w {
+        width: calc(50% - 2*var(--margin));
+    }
+    .highlight-box--jumbo {
+        text-align: center;
+        padding: 2em;
+        border: var(--gray) 2px solid;
+        background: var(--gray);
+        color: var(--light);
+    }
+    .text-title {
+        margin-bottom: 0.3em;
+        text-align: center;
+        font-size: 3.5em;
+        font-weight: bold;
+    }
+    .text-title--big {
+        font-size: 1.8em;
+    
+    }
+    .text-small {
+        margin-top: 0em;
+        margin-bottom: 1.5em;
+        font-size: .8em;
+        font-weight: bold;
+    }
+
+}
